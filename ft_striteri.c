@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabdelha <mabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/22 15:11:39 by mabdelha          #+#    #+#             */
-/*   Updated: 2024/10/31 02:24:34 by mabdelha         ###   ########.fr       */
+/*   Created: 2024/10/31 03:42:03 by mabdelha          #+#    #+#             */
+/*   Updated: 2024/10/31 20:18:07 by mabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
-{
-	unsigned char	*p;
-	unsigned char	v;
-	size_t			i;
-
-	p = (unsigned char *)s;
-	v = (unsigned char)c;
-	i = 0;
-	while (i < n)
-	{
-		p[i] = v;
-		i++;
-	}
-	return (s);
+#include <ctype.h>
+void ft_touppere(unsigned int index, char *c) {
+    *c = 'a';
 }
+
+void ft_striteri(char *s, void (*f)(unsigned int,char*))
+{
+    unsigned int i;
+    i = 0;
+    while (s[i] != '\0')
+    {
+        f(i, &s[i]);
+        i++;
+    }
+}
+
 int main()
 {
-	char s[] = "Hello";
-	int c = 0;
-	printf("%s", ft_memset(s, c, 5));
+    char c[] = "hello";
+    ft_striteri(c, ft_touppere);
+    printf("%s", c);
 }

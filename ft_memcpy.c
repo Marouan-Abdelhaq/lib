@@ -6,7 +6,7 @@
 /*   By: mabdelha <mabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 18:44:47 by mabdelha          #+#    #+#             */
-/*   Updated: 2024/10/29 16:57:01 by mabdelha         ###   ########.fr       */
+/*   Updated: 2024/10/31 18:36:43 by mabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 
 	i = 0;
 	p = (unsigned char *)dest;
-	v = (const unsigned char *)src;
+	v = (unsigned char *)src;
 	while (i < n)
 	{
 		p[i] = v[i];
