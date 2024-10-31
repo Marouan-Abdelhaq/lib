@@ -6,7 +6,7 @@
 /*   By: mabdelha <mabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 17:11:05 by mabdelha          #+#    #+#             */
-/*   Updated: 2024/10/28 17:48:17 by mabdelha         ###   ########.fr       */
+/*   Updated: 2024/10/30 20:24:06 by mabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	void	*ptr;  // pointer to the allocated memory
 	char	*p;
 	size_t	l;
 	size_t	i;
+	void	*ptr;
 
 	i = 0;
-	l = nmemb * size;  // calculate the total size
-	ptr = malloc(l);  // allocate memory
-	p = (char *)ptr;   // convert to char pointer
+	l = nmemb * size;
+	ptr = malloc(l);
+	p = (char *)ptr;
 	if (!nmemb && (l / nmemb != size))
 		return (NULL);
 	if (ptr == NULL)
