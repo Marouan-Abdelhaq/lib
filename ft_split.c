@@ -6,7 +6,7 @@
 /*   By: mabdelha <mabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 17:11:26 by mabdelha          #+#    #+#             */
-/*   Updated: 2024/10/30 06:11:27 by mabdelha         ###   ########.fr       */
+/*   Updated: 2024/11/01 04:52:19 by mabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,19 @@ static char	*ft_copy_word(const char *s, const char *e)
 	return (res);
 }
 
+static int	ft_stor_free(char **tab, const char *st, const char *en, int i)
+{
+	tab[i] = ft_copy_word(st, en);
+	if (!tab[i])
+	{
+		while (i > 0)
+			free(tab[--i]);
+		free(tab);
+		return (0);
+	}
+	return (1);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	int			nb_words;
@@ -57,7 +70,6 @@ char	**ft_split(char const *s, char c)
 	int			i;
 	const char	*st;
 
-	st = s;
 	if (!s)
 		return (NULL);
 	nb_words = ft_count_words(s, c);
@@ -69,21 +81,45 @@ char	**ft_split(char const *s, char c)
 	{
 		while (*s == c && *s)
 			s++;
+		st = s;
 		while (*s != c && *s)
 			s++;
-		if (st < s)
-		{
-			tab[i] = ft_copy_word(st, s);
-			if (!tab[i])
-			{
-				while (i > 0)
-					free(tab[--i]);
-				free(tab);
-				return (NULL);
-			}
-			i++;
-		}
+		if (st < s && !ft_stor_free(tab, st, s, i++))
+			return (NULL);
 	}
 	tab[i] = NULL;
 	return (tab);
+}
+
+void	print_split_result(char **split_result)
+{
+	int	i = 0;
+
+	while (split_result[i])
+	{
+		printf("Word %d: %s\n", i, split_result[i]);
+		i++;
+	}
+}
+
+int	main(void)
+{
+	char	**result;
+	char	*str = "hello,world,this,is,a,test";
+	char	delimiter = ',';
+
+	result = ft_split(str, delimiter);
+	if (!result)
+	{
+		printf("Memory allocation failed or invalid input.\n");
+		return (1);
+	}
+	print_split_result(result);
+
+	// Free allocated memory
+	int	i = 0;
+	while (result[i])
+		free(result[i++]);
+	free(result);
+	return (0);
 }
