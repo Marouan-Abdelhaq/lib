@@ -6,7 +6,7 @@
 /*   By: mabdelha <mabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 20:32:50 by mabdelha          #+#    #+#             */
-/*   Updated: 2024/10/30 22:35:24 by mabdelha         ###   ########.fr       */
+/*   Updated: 2024/11/02 15:02:54 by mabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,9 @@ char *ft_itoa(int n)
         nb = nb / 10;
     }
     return (str);
+}
+
+int main()
+{
+    printf("%s", ft_itoa(012));
 }
