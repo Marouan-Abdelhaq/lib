@@ -6,13 +6,13 @@
 /*   By: mabdelha <mabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 15:53:56 by mabdelha          #+#    #+#             */
-/*   Updated: 2024/11/01 04:39:13 by mabdelha         ###   ########.fr       */
+/*   Updated: 2024/11/02 22:02:46 by mabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+size_t	ft_strlcat(char *dest, char *src, unsigned int size)
 {
 	int				i;
 	unsigned int	size_dest;
@@ -32,13 +32,4 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	}
 	dest[size_dest + i] = '\0';
 	return (size_dest + size_src);
-}
-
-int  main()
-{
-	char dest[] = "Hello";
-	char src[] = "World";
-	printf("%d\n", ft_strlcat(dest, src, 20));
-	printf("%s\n", dest);
-	return 0;
 }

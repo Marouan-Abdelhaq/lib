@@ -1,24 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabdelha <mabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/31 03:42:03 by mabdelha          #+#    #+#             */
-/*   Updated: 2024/11/02 22:05:33 by mabdelha         ###   ########.fr       */
+/*   Created: 2024/11/03 17:44:41 by mabdelha          #+#    #+#             */
+/*   Updated: 2024/11/04 14:19:06 by mabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_striteri(char *s, void (*f)(unsigned int,char*))
+// void del(void *content) {
+//     free(content); // Libérer le contenu
+// }
+
+void ft_lstclear(t_list **lst, void (*del)(void*))
 {
-    unsigned int i;
-    i = 0;
-    while (s[i] != '\0')
+    t_list *ptr;
+    if (!lst || !*lst)
     {
-        f(i, &s[i]);
-        i++;
+        return ;
     }
+    while (*lst)
+    {
+        ptr = *lst;
+        *lst = ptr->next;
+        del(ptr->content);
+        free(ptr);
+    }
+    *lst = NULL;
 }

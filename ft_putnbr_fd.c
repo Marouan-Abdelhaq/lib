@@ -6,7 +6,7 @@
 /*   By: mabdelha <mabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 22:08:21 by mabdelha          #+#    #+#             */
-/*   Updated: 2024/11/01 02:44:13 by mabdelha         ###   ########.fr       */
+/*   Updated: 2024/11/02 22:05:54 by mabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,4 @@ void ft_putnbr_fd(int n, int fd)
         char c = n + '0';
         write (fd, &c, 1);
     }
-}
-
-int main()
-{
-    int n = 10422645587;
-    int fd = open("tst.txt", O_WRONLY, 50);
-    ft_putnbr_fd(n, fd);
 }

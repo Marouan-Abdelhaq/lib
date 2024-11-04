@@ -6,13 +6,13 @@
 /*   By: mabdelha <mabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 15:11:39 by mabdelha          #+#    #+#             */
-/*   Updated: 2024/10/31 02:24:34 by mabdelha         ###   ########.fr       */
+/*   Updated: 2024/11/02 15:55:03 by mabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+void	*ft_memset(void *s, int c, size_t len)
 {
 	unsigned char	*p;
 	unsigned char	v;
@@ -21,16 +21,10 @@ void	*ft_memset(void *s, int c, size_t n)
 	p = (unsigned char *)s;
 	v = (unsigned char)c;
 	i = 0;
-	while (i < n)
+	while (i < len)
 	{
 		p[i] = v;
 		i++;
 	}
 	return (s);
-}
-int main()
-{
-	char s[] = "Hello";
-	int c = 0;
-	printf("%s", ft_memset(s, c, 5));
 }

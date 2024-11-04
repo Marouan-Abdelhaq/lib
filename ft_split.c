@@ -6,7 +6,7 @@
 /*   By: mabdelha <mabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 17:11:26 by mabdelha          #+#    #+#             */
-/*   Updated: 2024/11/01 04:52:19 by mabdelha         ###   ########.fr       */
+/*   Updated: 2024/11/04 14:21:42 by mabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 static int	ft_count_words(const char *s, char c)
 {
-	int	i;
 	int	count;
 	int	in_word;
 
@@ -89,37 +88,4 @@ char	**ft_split(char const *s, char c)
 	}
 	tab[i] = NULL;
 	return (tab);
-}
-
-void	print_split_result(char **split_result)
-{
-	int	i = 0;
-
-	while (split_result[i])
-	{
-		printf("Word %d: %s\n", i, split_result[i]);
-		i++;
-	}
-}
-
-int	main(void)
-{
-	char	**result;
-	char	*str = "hello,world,this,is,a,test";
-	char	delimiter = ',';
-
-	result = ft_split(str, delimiter);
-	if (!result)
-	{
-		printf("Memory allocation failed or invalid input.\n");
-		return (1);
-	}
-	print_split_result(result);
-
-	// Free allocated memory
-	int	i = 0;
-	while (result[i])
-		free(result[i++]);
-	free(result);
-	return (0);
 }

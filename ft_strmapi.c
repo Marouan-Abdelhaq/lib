@@ -6,12 +6,12 @@
 /*   By: mabdelha <mabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 23:07:51 by mabdelha          #+#    #+#             */
-/*   Updated: 2024/10/31 16:49:49 by mabdelha         ###   ########.fr       */
+/*   Updated: 2024/11/04 16:05:45 by mabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+#include <ctype.h>
 char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
     int i;
@@ -32,19 +32,17 @@ char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
     new_str[i] = '\0';
     return (new_str);
 }
-
-char  ft_uppercase(unsigned int i, char c)
-{
-    if (c >= 'a' && c <= 'z')
-    {
-        return (c - 32);
-    }
-    return (c);
+// Fonction de transformation pour mettre en majuscule
+char to_upper(unsigned int i, char c) {
+    (void)i;  // On ignore l'index
+    return (char)toupper((unsigned char)c);
 }
-int main()
-{
-    char *str = "hello";
-    char *new_str = ft_strmapi(str, ft_uppercase);
-    printf("%s\n", new_str);
-    return (0);
+#include <stdio.h>
+int main() {
+    char *s = ft_strmapi("hello", to_upper);
+    if (s) {
+        printf("Résultat : %s\n", s);  // Affiche "HELLO"
+        free(s);  // Libère la mémoire allouée
+    }
+    return 0;
 }
