@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+
 size_t	ft_strlcpy(char *dest, const char *src, unsigned int size)
 {
 	unsigned int	l;
@@ -26,7 +27,7 @@ size_t	ft_strlcpy(char *dest, const char *src, unsigned int size)
 	{
 		return (l);
 	}
-	while (i < size -1 && src[i])
+	while (i < size - 1 && src[i])
 	{
 		dest[i] = src[i];
 		i++;

@@ -16,19 +16,20 @@
 //     free(content); // Libérer le contenu
 // }
 
-void ft_lstclear(t_list **lst, void (*del)(void*))
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-    t_list *ptr;
-    if (!lst || !*lst)
-    {
-        return ;
-    }
-    while (*lst)
-    {
-        ptr = *lst;
-        *lst = ptr->next;
-        del(ptr->content);
-        free(ptr);
-    }
-    *lst = NULL;
+	t_list	*ptr;
+
+	if (!lst || !*lst)
+	{
+		return ;
+	}
+	while (*lst)
+	{
+		ptr = *lst;
+		*lst = ptr->next;
+		del(ptr->content);
+		free(ptr);
+	}
+	*lst = NULL;
 }

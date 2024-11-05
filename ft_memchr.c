@@ -6,7 +6,7 @@
 /*   By: mabdelha <mabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 16:46:15 by mabdelha          #+#    #+#             */
-/*   Updated: 2024/10/28 23:56:38 by mabdelha         ###   ########.fr       */
+/*   Updated: 2024/11/04 20:12:13 by mabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ void	*ft_memchr(const void *s, int c, size_t n)
 
 	p = (unsigned char *)s;
 	v = c;
-	while (*p && n--)
+	while (n--)
 	{
 		if (v == *p)
 		{
-			return ((char *)p);
+			return ((void *)p);
 		}
 		p++;
 	}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabdelha <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mabdelha <mabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 15:07:37 by mabdelha          #+#    #+#             */
-/*   Updated: 2024/10/26 15:14:12 by mabdelha         ###   ########.fr       */
+/*   Updated: 2024/11/05 00:42:35 by mabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,10 @@ char	*ft_strrchr(const char *s, int c)
 			o = (char *)s;
 		}
 		s++;
+	}
+	if (c == '\0')
+	{
+		return ((char *)s);
 	}
 	return (o);
 }
