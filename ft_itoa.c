@@ -6,7 +6,7 @@
 /*   By: mabdelha <mabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 20:32:50 by mabdelha          #+#    #+#             */
-/*   Updated: 2024/11/04 14:22:14 by mabdelha         ###   ########.fr       */
+/*   Updated: 2024/11/06 20:18:29 by mabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_count_digits(int n)
 	int	l;
 
 	l = 0;
-	if (n < 0)
+	if (n <= 0)
 	{
 		l = 1;
 	}
@@ -45,9 +45,7 @@ char	*ft_itoa(int n)
 		nb = -nb;
 	}
 	if (nb == 0)
-	{
 		str[0] = '0';
-	}
 	while (nb > 0)
 	{
 		str[--l] = (nb % 10) + '0';

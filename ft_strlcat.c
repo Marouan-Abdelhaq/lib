@@ -6,7 +6,7 @@
 /*   By: mabdelha <mabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 15:53:56 by mabdelha          #+#    #+#             */
-/*   Updated: 2024/11/02 22:02:46 by mabdelha         ###   ########.fr       */
+/*   Updated: 2024/11/06 20:29:12 by mabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 size_t	ft_strlcat(char *dest, char *src, unsigned int size)
 {
-	int				i;
-	unsigned int	size_dest;
-	unsigned int	size_src;
+	int		i;
+	size_t	size_dest;
+	size_t	size_src;
 
 	i = 0;
-	size_dest = strlen(dest);
-	size_src = strlen(src);
+	size_dest = ft_strlen(dest);
+	size_src = ft_strlen(src);
 	if (size <= size_dest)
 	{
 		return (size + size_src);

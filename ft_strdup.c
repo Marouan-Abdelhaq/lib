@@ -6,7 +6,7 @@
 /*   By: mabdelha <mabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 17:42:10 by mabdelha          #+#    #+#             */
-/*   Updated: 2024/10/28 20:26:59 by mabdelha         ###   ########.fr       */
+/*   Updated: 2024/11/06 20:26:11 by mabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,11 @@ char	*ft_strdup(const char *s)
 {
 	char	*str;
 	size_t	len;
+	int		l;
 
-	len = 0;
-	str = (char *)malloc(sizeof(char) * (len = strlen(s) + 1));
+	l = ft_strlen(s);
+	len = ft_strlen(s) + 1;
+	str = (char *)malloc(sizeof(char) * len);
 	if (str == NULL)
 	{
 		return (NULL);
@@ -27,6 +29,6 @@ char	*ft_strdup(const char *s)
 	{
 		str[len] = s[len];
 	}
-	str[len] = '\0';
+	str[l] = '\0';
 	return (str);
 }

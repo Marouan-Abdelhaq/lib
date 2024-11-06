@@ -6,7 +6,7 @@
 /*   By: mabdelha <mabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 22:08:21 by mabdelha          #+#    #+#             */
-/*   Updated: 2024/11/02 22:05:54 by mabdelha         ###   ########.fr       */
+/*   Updated: 2024/11/06 20:10:31 by mabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_putnbr_fd(int n, int fd)
 	else if (n < 0)
 	{
 		write(fd, "-", 1);
-		ft_putnbr_fd(n, fd);
+		ft_putnbr_fd(-n, fd);
 	}
 	else if (n > 9)
 	{

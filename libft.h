@@ -6,7 +6,7 @@
 /*   By: mabdelha <mabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 20:31:24 by mabdelha          #+#    #+#             */
-/*   Updated: 2024/11/05 01:49:48 by mabdelha         ###   ########.fr       */
+/*   Updated: 2024/11/06 00:16:43 by mabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 //\\ Part 1 - Functions from libc \\//
 int					ft_isalpha(int a);
 int					ft_isdigit(int d);
-int					ft_isalnum(char an);
+int					ft_isalnum(int c);
 int					ft_isascii(int as);
 int					ft_isprint(int p);
 size_t				ft_strlen(const char *str);

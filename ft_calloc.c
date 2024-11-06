@@ -6,7 +6,7 @@
 /*   By: mabdelha <mabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 17:11:05 by mabdelha          #+#    #+#             */
-/*   Updated: 2024/11/05 02:23:17 by mabdelha         ###   ########.fr       */
+/*   Updated: 2024/11/05 23:31:32 by mabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 
 	l = nmemb * size;
 	ptr = malloc(l);
-
 	if (ptr == NULL)
 		return (NULL);
 	ft_bzero(ptr, l);
