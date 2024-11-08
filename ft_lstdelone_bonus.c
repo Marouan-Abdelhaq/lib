@@ -6,7 +6,7 @@
 /*   By: mabdelha <mabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 16:38:25 by mabdelha          #+#    #+#             */
-/*   Updated: 2024/11/04 17:41:18 by mabdelha         ###   ########.fr       */
+/*   Updated: 2024/11/08 22:49:57 by mabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	if (!lst || del)
+	if (!lst || !del)
 	{
 		return ;
 	}
