@@ -6,7 +6,7 @@
 /*   By: mabdelha <mabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 20:56:18 by mabdelha          #+#    #+#             */
-/*   Updated: 2024/10/31 00:04:28 by mabdelha         ###   ########.fr       */
+/*   Updated: 2024/11/07 03:29:43 by mabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*s;
 
 	st = 0;
-	en = strlen(s1);
+	en = ft_strlen(s1);
 	while (st < en && ft_strchr_trim(set, s1[st]) != -1)
 		st++;
 	while (en > st && ft_strchr_trim(set, s1[en - 1]) != -1)
@@ -41,7 +41,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	s = (char *)malloc((en - st + 1) * sizeof(char));
 	if (!s)
 		return (NULL);
-	strncpy(s, s1 + st, en - st);
+	ft_memcpy(s, s1 + st, en - st);
 	s[en - st] = '\0';
 	return (s);
 }

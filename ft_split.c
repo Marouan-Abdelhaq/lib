@@ -6,7 +6,7 @@
 /*   By: mabdelha <mabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 17:11:26 by mabdelha          #+#    #+#             */
-/*   Updated: 2024/11/06 00:17:28 by mabdelha         ###   ########.fr       */
+/*   Updated: 2024/11/06 23:17:02 by mabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static char	*ft_copy_word(const char *s, const char *e)
 	res = (char *)malloc(l + 1);
 	if (!res)
 		return (NULL);
-	strncpy(res, s, l);
+	ft_memcpy(res, s, l);
 	res[l] = '\0';
 	return (res);
 }
