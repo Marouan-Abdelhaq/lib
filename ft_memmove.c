@@ -6,7 +6,7 @@
 /*   By: mabdelha <mabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 14:51:27 by mabdelha          #+#    #+#             */
-/*   Updated: 2024/11/06 23:45:21 by mabdelha         ###   ########.fr       */
+/*   Updated: 2024/11/09 21:08:26 by mabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	const unsigned char	*v;
 	size_t				i;
 
+	if (!dest && !src)
+		return (NULL);
 	v = (const unsigned char *)src;
 	p = (unsigned char *)dest;
-	if (!p || !v)
-		return (NULL);
 	if (p > v)
 	{
 		i = n;

@@ -6,7 +6,7 @@
 /*   By: mabdelha <mabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 20:32:50 by mabdelha          #+#    #+#             */
-/*   Updated: 2024/11/06 20:18:29 by mabdelha         ###   ########.fr       */
+/*   Updated: 2024/11/09 20:45:33 by mabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ char	*ft_itoa(int n)
 	nb = n;
 	l = ft_count_digits(n);
 	str = (char *)malloc((l + 1) * sizeof(char));
+	if (!str)
+		return (NULL);
 	str[l] = '\0';
 	if (nb < 0)
 	{
